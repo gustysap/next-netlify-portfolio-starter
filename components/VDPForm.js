@@ -1,6 +1,6 @@
-export default function ContactForm() {
+export default function VDPForm() {
   return (
-    <form name="VDP Submissions" action="/success" method="POST" data-netlify="true">
+    <form name="VDP Submissions" action="/success" method="POST" data-netlify-recaptcha="true" data-netlify="true">
       <input type="hidden" name="form-name" value="VDP Submissions" />
       <p>
         <label htmlFor="reporttitle">Report Title:</label>
@@ -11,9 +11,12 @@ export default function ContactForm() {
         <input type="email" name="productname" id="productname" />
       </p>
       <p>
-        <label htmlFor="yourmessage">Message: </label>
-        <textarea name="message" id="yourmessage"></textarea>
+        <label>
+          <span>Add file:</span>
+        <input name="file" type="file"/>
+        </label>
       </p>
+      <div data-netlify-recaptcha="true"></div>
       <p>
         <button type="submit">Send Report</button>
       </p>
