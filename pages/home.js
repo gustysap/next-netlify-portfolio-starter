@@ -2,20 +2,34 @@ import Head from 'next/head'
 
 import Nav from '@components/Nav'
 import Header from '@components/Header'
+import Card from '@components/Card'
 import Footer from '@components/Footer'
-import ContactForm from '@components/VDPForm'
 
-export default function Contact() {
+export default function Home({ items }) {
   return (
     <div className="container">
       <Head>
-        <title>My Portfolio | Contact</title>
+        <title>My Portfolio Example</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
+
       <main>
-        <Header text="Contact me" />
-        <ContactForm />
+        <Header text="Welcome to my portfolio!" />
+
+        <div className="cards">
+          {items?.length &&
+            items.map((i) => {
+              return (
+                <Card
+                  key={i.title}
+                  title={i.title}
+                  picture={i.image}
+                  link={i.slug}
+                />
+              )
+            })}
+        </div>
       </main>
 
       <Footer />
@@ -37,6 +51,13 @@ export default function Contact() {
           justify-content: center;
           align-items: center;
         }
+
+        .cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
       `}</style>
 
       <style jsx global>{`
@@ -55,4 +76,19 @@ export default function Contact() {
       `}</style>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const portfolioData = await import(`../portfolio.json`)
+
+  let slugs = []
+  portfolioData.items.map((i) => {
+    slugs.concat(i.slug)
+  })
+
+  return {
+    props: {
+      items: portfolioData.items,
+    },
+  }
 }
