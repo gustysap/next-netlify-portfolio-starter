@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <div className="container">
       <Head>
-        <title>Vulnerability Disclosure Policy </title>
+        <title>Flip Vulnerability Disclosure Policy </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />

@@ -2,7 +2,8 @@ export default function Footer() {
   return (
     <>
       <footer>
-       Flip Security Team
+        <img src="/logo.png" alt="Flip Logo" className="logo" />
+        Flip Security Team
       </footer>
       <style jsx>{`
         footer {
