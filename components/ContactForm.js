@@ -1,21 +1,21 @@
 export default function ContactForm() {
   return (
-    <form name="contact" action="/success" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact" />
+    <form name="VDP Submissions" action="/success" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="VDP Submissions" />
       <p>
-        <label htmlFor="yourname">Your Name:</label>
-        <input type="text" name="name" id="yourname" />
+        <label htmlFor="reporttitle">Report Title:</label>
+        <input type="text" name="title" id="reporttitle" />
       </p>
       <p>
-        <label htmlFor="youremail">Your Email: </label>{' '}
-        <input type="email" name="email" id="youremail" />
+        <label htmlFor="productname">Product/Website Name: </label>{' '}
+        <input type="email" name="productname" id="productname" />
       </p>
       <p>
         <label htmlFor="yourmessage">Message: </label>
         <textarea name="message" id="yourmessage"></textarea>
       </p>
       <p>
-        <button type="submit">Send</button>
+        <button type="submit">Send Report</button>
       </p>
       <style jsx>{`
         label {
@@ -38,7 +38,7 @@ export default function ContactForm() {
 
         button {
           padding: 20px;
-          background: black;
+          background: orange;
           color: white;
           border-radius: 10px;
           font-size: 1.3rem;

@@ -8,15 +8,15 @@ export default function Contact() {
   return (
     <div className="container">
       <Head>
-        <title>My Portfolio | Success!</title>
+        <title>VDP Submitted | Success!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Nav />
 
       <main>
-        <Header text="Contact me" />
-        Form successfully submitted!
+        <Header text="VDP" />
+        VDP successfully submitted!
       </main>
 
       <Footer />
